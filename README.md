@@ -236,7 +236,7 @@ Make 2x$100 deposits and a 1x$200 withdrawal and check balance is correct
 ### WebLogic-DEV
 
 ```
-[sbutton] basicwebapp $ mvn -q -P weblogic-DEV
+[sbutton@localhost] basicwebapp $ mvn -q -P weblogic-DEV
 
 -------------------------------------------------------
  T E S T S
@@ -263,7 +263,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ### WebLogic-AT
 
 ```
-[sbutton@dhcp-au-adelaide-10-187-112-202] basicwebapp $ mvn -q -P weblogic-AT
+[sbutton@localhost] basicwebapp $ mvn -q -P weblogic-AT
 .......
 weblogic.Deployer invoked with options:  -noexit -deploy -user weblogic -name basicwebapp -source /private/tmp/pipelines/basicwebapp/target/basicwebapp.war -targets AdminServer -verbose -adminurl t3://localhost:7001
 <23/02/2015 2:55:20 PM CST> <Info> <J2EE Deployment SPI> <BEA-260121> <Initiating deploy operation for application, basicwebapp [archive: /private/tmp/pipelines/basicwebapp/target/basicwebapp.war], to AdminServer .> 
@@ -295,6 +295,12 @@ XUnit:   /private/tmp/pipelines/basicwebapp/target/robotframework-reports/TEST-a
 Log:     /private/tmp/pipelines/basicwebapp/target/robotframework-reports/log.html
 Report:  /private/tmp/pipelines/basicwebapp/target/robotframework-reports/report.html
 ```
+**Robot Acceptance Test Report**
+![Acceptance Test Log ](images/robot-log.png)
+**Robot Acceptance Test Case**
+![Acceptance Test ](images/robot-test.png)
+
+
 
 
 
