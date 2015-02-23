@@ -1,4 +1,4 @@
-# pipelines
+# WebLogic with Arquillian and Robot
 
 Steve Button   
 Feb 2015
