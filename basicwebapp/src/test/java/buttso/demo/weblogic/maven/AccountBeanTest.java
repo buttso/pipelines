@@ -28,13 +28,21 @@ public class AccountBeanTest {
         JavaArchive jar = ShrinkWrap.create(JavaArchive.class)
                 .addClass(AccountBean.class)
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+        System.out.println(jar.toString(true));
         return jar;
     }
 
     @Test
-    public void test_account_bean_was_deployed() {
+    
+    public void test_account_bean   () {
+        String name = "Jack";
+        Float amount = 100.99F;
         Assert.notNull(accountBean, "AccountBean was not injected, is null");
-        System.out.println("\n\n---> HERE <---\n");
+        accountBean.setName(name);
+        accountBean.setAmount(amount);
+        accountBean.deposit();
+        String message = accountBean.getMsg();
+        Assert.isTrue(amount == accountBean.getAmount(), accountBean.getName() + " should have " + amount + " but has $" + accountBean.getAmount());
     }
 
 }

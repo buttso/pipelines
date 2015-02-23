@@ -19,7 +19,7 @@
 
         <ui:define name="body">
             <div class="well">
-                <h:form styleClass="form">
+                <h:form id="deposit_form" styleClass="form">
                     <legend>Please Enter Your Account Name and Amount</legend>
                     <label>Account Name</label>
 
@@ -34,8 +34,8 @@
                     <h:outputText value="#{accountBean.msg}" styleClass="alert-success" escape="false"></h:outputText>
 
                     <div class="form-actions">                        
-                        <span><h:commandButton value="Deposit" styleClass="btn btn-success" action="#{accountBean.deposit}" ></h:commandButton></span>                      
-                        <span><h:commandButton value="Reset" styleClass="btn btn-danger" type="reset"></h:commandButton></span>
+                        <span><h:commandButton id="deposit" value="Deposit" styleClass="btn btn-success" action="#{accountBean.deposit}" ></h:commandButton></span>                      
+                        <span><h:commandButton id="reset" value="Reset" styleClass="btn btn-danger" type="reset"></h:commandButton></span>
                     </div>
 
                 </h:form>

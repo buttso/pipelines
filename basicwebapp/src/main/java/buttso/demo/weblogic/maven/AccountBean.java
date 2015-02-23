@@ -8,6 +8,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import java.io.Serializable;
+        import java.text.NumberFormat;
 import java.util.HashMap;
 
 /**
@@ -17,6 +18,8 @@ import java.util.HashMap;
 @SessionScoped
 public class AccountBean implements Serializable {
 
+  private final NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
+  
   private String name;
   
   private float amount;
@@ -45,14 +48,13 @@ public class AccountBean implements Serializable {
   public String getMsg() {
     return msg;
   }
-
-
+  
   public void deposit() {
     float theSum = amount;
     if(accountAmountPairs.containsKey(name)) {
       theSum = accountAmountPairs.get(name).floatValue() + theSum;
     }
     accountAmountPairs.put(name, Float.valueOf(theSum));
-    msg = "The money have been deposited to " + name + ", the balance of the account is " + theSum;
+    msg = "The money have been deposited to " + name + ", the balance of the account is " + currencyFormatter.format(theSum);
   }
 }
