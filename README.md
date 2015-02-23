@@ -21,7 +21,7 @@ The **WebLogic Maven Plugin** is used to perform all of the tasks associated wit
 + Stopping the server;
 + Removing the domain;
 
-```
+```xml
 <plugin>
     <groupId>com.oracle.weblogic</groupId> 
     <artifactId>weblogic-maven-plugin</artifactId> 
@@ -62,7 +62,7 @@ The **Arquillian** testing framework is used to execute unit tests on the applic
 
 **Maven Configuration**
 
-```
+```xml
 <project>
     ...
     <dependencyManagement>
@@ -100,7 +100,7 @@ The **Arquillian** testing framework is used to execute unit tests on the applic
 ```
 **Unit Test**
 
-```
+```java
 package buttso.demo.weblogic.maven;
 
 import com.bea.core.repackaged.springframework.util.Assert;
@@ -158,7 +158,7 @@ The **Robot Framework Maven Plugin** is used to perform acceptance testing of th
 + Verify the results of the page match what is expected;
 + Report results;
 
-```
+```xml
 <project>
     ...
     <plugins>
@@ -190,7 +190,7 @@ The **Robot Framework Maven Plugin** is used to perform acceptance testing of th
 
 **Robot Test Script**
 
-```
+```robot
 *** Settings ***
 Documentation   Acceptance testing
 Library         Selenium2Library
@@ -235,7 +235,7 @@ Make 2x$100 deposits and a 1x$200 withdrawal and check balance is correct
 ## Exececuting Tests
 ### WebLogic-DEV
 
-```
+```bash
 [sbutton@localhost] basicwebapp $ mvn -q -P weblogic-DEV
 
 -------------------------------------------------------
@@ -262,7 +262,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ```
 ### WebLogic-AT
 
-```
+```bash
 [sbutton@localhost] basicwebapp $ mvn -q -P weblogic-AT
 .......
 weblogic.Deployer invoked with options:  -noexit -deploy -user weblogic -name basicwebapp -source /private/tmp/pipelines/basicwebapp/target/basicwebapp.war -targets AdminServer -verbose -adminurl t3://localhost:7001
